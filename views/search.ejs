@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>DevBlog - Search</title>
+	<link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+	<div class="container">
+		<header>
+			<h1>meowmeowcat92's blog</h1>
+		</header>
+
+		<form action="/search" method="GET" class="search-form">
+			<input type="text" name="q" value="<%= query %>" placeholder="Search articles...">
+			<button type="submit">Search</button>
+		</form>
+
+		<p class="search-label">Showing results for: <strong><%- query %></strong></p>
+
+		<% if (results.length===0) { %>
+			<p class="no-results">No articles matched your search.</p>
+			<% } else { %>
+				<div class="article-list">
+					<% results.forEach(a=> { %>
+						<div class="article-card">
+							<h3>
+								<%= a.title %>
+							</h3>
+							<p>
+								<%= a.summary %>
+							</p>
+						</div>
+						<% }) %>
+				</div>
+				<% } %>
+
+					<div class="nav-buttons" style="margin-top:2rem;">
+						<a href="/" class="btn btn-primary">Home</a>
+					</div>
+	</div>
+</body>
+
+</html>

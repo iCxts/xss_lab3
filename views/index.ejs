@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>DevBlog</title>
+	<link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+	<div class="container">
+		<header>
+			<h1>meowmeowcat92's blog</h1>
+			<p>post random stuff here</p>
+		</header>
+
+		<form action="/search" method="GET" class="search-form">
+			<input type="text" name="q" placeholder="Search articles...">
+			<button type="submit">Search</button>
+		</form>
+
+		<h2>Latest Articles</h2>
+		<div class="article-list">
+			<% articles.forEach(a=> { %>
+				<div class="article-card">
+					<h3>
+						<%= a.title %>
+					</h3>
+					<p>
+						<%= a.summary %>
+					</p>
+				</div>
+				<% }) %>
+		</div>
+
+	</div>
+</body>
+
+</html>
