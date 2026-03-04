@@ -1,4 +1,4 @@
-# XSS Lab 3 — Walkthrough
+# XSS Lab 3 - Walkthrough
 
 ## What's the bug?
 
@@ -22,7 +22,7 @@ It only removes `<script>` tags. Everything else passes through.
 
 ## Exploit
 
-You don't need `<script>` tags to run JavaScript. Use an image with a broken `src` — the browser fires `onerror` automatically:
+You don't need `<script>` tags to run JavaScript. Use an image with a broken `src` - the browser fires `onerror` automatically:
 
 ```
 http://localhost:3000/search?q=<img src=x onerror=alert(1)>
